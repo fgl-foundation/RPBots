@@ -10,6 +10,7 @@ for i in botlist:
         os.remove("bots/"+i+".py")
         os.remove("bots/"+i+".sh")
         os.remove("/lib/systemd/system/"+i+".service")
+        os.system("systemctl stop "+i+".service")
 
 
 for i in botlist:
