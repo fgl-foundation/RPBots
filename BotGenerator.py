@@ -17,7 +17,7 @@ for i in botlist:
     open("bots/"+i+".py",'w').write("botname=\""+i+"\"\n"+a)
     cd=os.path.abspath(os.path.curdir)
     open("bots/"+i+".sh",'w').write("#!/bin/sh\ncd "+cd+"\nexec python3 bots/"+i+".py\nexit 0")
-
+    os.system("chmod +x bots/"+i+".sh")
     service="""[Unit]
 Description=Discord bot service
 After=network.target
